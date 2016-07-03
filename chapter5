@@ -1,0 +1,230 @@
+#include <iostream> // For Input/Output standard streams objects
+#include <iomanip> // For Input/Output Manipulators
+#include <cmath> // For the Mathematical Library Functionsnput/Output Manipulators
+#include <string> // For the string class
+#include <cstdlib> // For defining several general purpose functions,
+				   // including dynamic memory management, random number generation,
+                   // communication with the environment, integer arithmetics,
+                   // searching, sorting and converting
+#include <ctime> // For manipulating date and time information
+using namespace std;
+
+int main()
+{
+	// While loop
+
+	const double MAX_TEMP = 102.5; // Maximum temperature
+	double temperature;			   // To hold the temperature
+
+	// Get the current temperature.
+	cout << "Enter the substance's Celsius temperature:\n";
+	cin >> temperature;
+
+	// As long as necessary, instruct the technician
+	// to adjust the thermostat.
+	while (temperature > MAX_TEMP)
+	{
+		cout << "The temperature is too high. Turn the\n";
+		cout << "thermostat down and wait 5 minutes.\n";
+		cout << "Then take the Celsius temperature again\n";
+		cout << "and enter it here:\n";
+		cin >> temperature;
+	}
+
+	// Remind the technician to check the temperature
+	// again in 15 minutes.
+	cout << "The temperature is acceptable.\n";
+	cout << "Check it again in 15 minutes.\n";
+
+	//-------------------------
+
+	// Input Validation
+	int number;
+	cout << "Enter a number in the range of 10 through 25:\n";
+	cin >> number;
+
+	while (number < 10 || number > 25)
+	{
+		cout << "Enter a number in the range of 10 through 25:\n";
+		cin >> number;
+	}
+
+	cout << "The number input: " << number << endl;
+
+	//-------------------------
+
+	// Counter
+	const int MIN_NUMBER = 1, MAX_NUMBER = 10;
+	int num = MIN_NUMBER;
+
+	cout << "-----------------------\n";
+
+	while (num <= MAX_NUMBER)
+	{
+		cout << num << "\t\t" << (num * num) << endl;
+		num++;
+	}
+
+	for (int num = 1; num <= MAX_NUMBER; num++)
+		Statement
+
+	//-------------------------
+
+	// do-while loop (user-controlled loop)
+
+	int score1, score2, score3, score4;
+	double average;
+	char again;
+
+	cout << setprecision(2) << fixed;
+	do
+	{
+		// Get four scores.
+		cout << "Enter 4 scores and I will average them:\n";
+		cin >> score1 >> score2 >> score3 >> score4;
+
+
+		average = (score1 + score2 + score3 + score4) / 4;
+		cout << "The average is " << average << "\n";
+
+		cout << "Do you want to average another set? (Y/N)\n";
+		cin >> again;
+	} while (again == 'Y' || again == 'y');
+
+	//-------------------------
+
+
+
+	//-------------------------
+
+	// 5.6
+	// Conditional loop - Executes as long as a particular condition exists.
+	// Count-Controlled loop - A loop that repeats a specific number of times.
+
+	// for (initialization: test; update)
+	//	statement;
+
+
+	const int MIN_KPH = 60, MAX_KPH = 130;
+	const double CONVERSION = 0.6214;
+	double mph;
+	int kph;
+
+	cout << fixed << showpoint << setprecision(1);
+	cout << "KPH\tMPH\n"
+		<< "-----------------------\n";
+
+	for (khp = MIN_KPH; khp <= MAX_KPH; khp += 10)
+	{
+		mph = kph * CONVERSION;
+
+		cout << kph << "\t" << mph << endl;
+	}
+
+	//-------------------------
+
+	int days;
+	double total = 0.0;
+
+	cout << "For how many days do you have sales figures? ";
+	cin >> days;
+
+	for (int count = 1; count <= days; count++)
+	{
+		double sales;
+		cout << "Enter the sales for days " << count << ": ";
+		cin >> sales;
+		total += sales;
+	}
+
+	cout << fixed << showpoint << setprecision(2);
+	cout << "The total sales are $" << total << endl;
+
+	//-------------------------
+
+	int game = 2, points, total = 1;
+
+	cout << "Enter the number of points your team has earned\n"
+		 << "so far in the season, then enter -1 when finished.\n\n"
+		 << "Enter the points for game 1: ";
+	cin >> points;
+
+	for (points != -1; points >= 0; game++)
+	{
+		total += points;
+
+		cout << "Enter the points for game " << game << ": ";
+		cin >> points;
+	}
+	cout << "\nThe total points are " << total << endl;
+
+	//-------------------------
+
+	cout << fixed << right;
+	cout.fill('0');
+	for (int seconds = 0; seconds < 60; seconds++)
+		cout << setw(2) << seconds << endl;
+
+	cout << fixed << right;
+	cout.fill('0');
+	for (int minutes = 0; minutes < 60; minutes++)
+	{
+		for (int seconds = 0; seconds < 60; seconds++)
+		{
+			cout << setw(2) << minutes << ":";
+			cout << setw(2) << seconds << endl;
+		}
+
+	}
+
+	cout << fixed << right;
+	cout.fill('0');
+	for (int hours = 0; hours < 60; hours++)
+	{
+		for (int minutes = 0; minutes < 60; minutes++)
+		{
+			for (int seconds = 0; seconds < 60; seconds++)
+			{
+				cout << setw(2) << hours << ":";
+				cout << setw(2) << minutes << ":";
+				cout << setw(2) << seconds << endl;
+			}
+
+		}
+	}
+
+	//-------------------------
+
+	int numAnime, numScore;
+	double total, average;
+
+	cout << "For how many anime are you watching this season: " << endl;
+	cin >> numAnime;
+
+	cout << "How many scores for the following anime: " << endl;
+	cin >> numScore;
+
+	for (int anime = 1; anime <= numAnime; anime++)
+	{
+		total = 0;
+			for (int score = 1; score <= numScore; score++)
+			{
+				double result;
+				cout << "Enter the results " << score << " for ";
+				cout << "anime " << anime << ": ";
+				cin >> result;
+				total += result;
+			}
+
+		cout << setprecision(2) << fixed << endl;
+		average = total / numScore;
+		cout << "The average score for student " << anime;
+		cout << " is " << average << ".\n\n";
+	}
+
+
+	//-------------------------
+
+
+	return 0;
+}
